@@ -1,0 +1,27 @@
+---
+title: "State Demographics"
+output: html_notebook
+---
+
+```{r}
+
+```
+
+```{r}
+library(choroplethr)
+```
+
+```{r}
+
+data(df_state_demographics)
+colnames(df_state_demographics)
+```
+
+```{r}
+boxplot(df_state_demographics$per_capita_income)
+```
+
+```{r}
+?df_state_demographics
+```
+
