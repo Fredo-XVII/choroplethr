@@ -1,0 +1,37 @@
+---
+title: "Mapping the Data"
+output: html_notebook
+---
+
+```{r}
+
+```
+
+```{r}
+library(choroplethr)
+library(choroplethrMaps)
+library(ggplot2)
+```
+
+```{r}
+data(df_state_demographics)
+head(df_state_demographics)
+```
+
+```{r}
+df_state_demographics$value <- df_state_demographics$per_capita_income
+```
+
+```{r}
+state_choropleth(df_state_demographics)
+```
+
+```{r}
+?state_choropleth
+```
+
+```{r}
+state_choropleth(df_state_demographics, num_colors=2)
+```
+
+End of email.

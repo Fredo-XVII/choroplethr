@@ -9,12 +9,17 @@ output: html_notebook
 
 ```{r}
 library(choroplethr)
+library(ggplot2)
 ```
 
 ```{r}
 
 data(df_state_demographics)
 colnames(df_state_demographics)
+```
+
+```{r}
+head(df_state_demographics, n = 10)
 ```
 
 ```{r}
@@ -25,3 +30,11 @@ boxplot(df_state_demographics$per_capita_income)
 ?df_state_demographics
 ```
 
+```{r}
+
+df_state_demographics %>%
+  ggplot(aes(x = region, y = percent_hispanic)) + 
+  geom_boxplot()
+```
+
+The end of the first email.
