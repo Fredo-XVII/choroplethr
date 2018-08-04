@@ -1,0 +1,39 @@
+---
+title: "Mapping Historic Data"
+output: html_notebook
+---
+
+```{r prep}
+
+```
+
+```{r libraries}
+library(acs)
+library(choroplethr)
+```
+
+```{r}
+
+api.key.install("b0c94925542070432c1cf6d02506af4933698497")
+acs.tables.install()
+```
+
+```{r}
+
+df_2010_demographics = choroplethr::get_state_demographics(endyear=2010, span=5)
+
+```
+
+```{r}
+state_choropleth(df_2010_demographics, 
+                 title  = "2010 Per Capita Income",
+                 legend = "Dollars")
+```
+
+```{r}
+df_2010_demographics$value = df_2010_demographics$per_capita_income
+state_choropleth(df_2010_demographics, 
+                 title  = "2010 Per Capita Income",
+                 legend = "Dollars")
+```
+

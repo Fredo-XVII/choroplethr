@@ -1,0 +1,40 @@
+---
+title: "Mapping Percent Change"
+output: html_notebook
+---
+
+```{r prep}
+
+```
+
+```{r libraries}
+library(choroplethr)
+library(choroplethrMaps)
+
+```
+
+# get the data
+```{r}
+
+df_state_2010 <- get_state_demographics(2010)
+df_state_2015 <- get_state_demographics(2015)
+```
+
+# set the "value" variable to income
+```{r}
+
+df_state_2010$value = df_state_2010$per_capita_income
+df_state_2015$value = df_state_2015$per_capita_income
+```
+
+# calculate the percent change
+```{r}
+
+df_state_pop_change = calculate_percent_change(df_state_2010, df_state_2015)
+```
+
+# Map it
+```{r}
+state_choropleth(df_state_pop_change, num_colors = 0) 
+```
+
