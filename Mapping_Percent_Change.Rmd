@@ -38,3 +38,26 @@ df_state_pop_change = calculate_percent_change(df_state_2010, df_state_2015)
 state_choropleth(df_state_pop_change, num_colors = 0) 
 ```
 
+# Change in Median Age
+```{r}
+df_state_2010$value = df_state_2010$median_age
+df_state_2015$value = df_state_2015$median_age
+
+```
+
+# Calculate the pecentage change in Median age
+```{r}
+
+df_state_pop_change = calculate_percent_change(df_state_2010, df_state_2015)
+
+```
+
+# Map the percentage change
+```{r}
+
+state_choropleth(df_state_pop_change, num_colors = 0) 
+
+```
+
+
+# End of Email
